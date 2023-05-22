@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+</head>
+<body>
+<script>
+    //function for - quando sabe até quando vai se repetir/ while-quando  não sabe até quando vai se repetir
+
+    // while-enquanto
+
+    function getInteiroAleatorio(min, max){
+        const  valor = Math.random()* (min- max )-min// o random vai pegar um valor negativo até 0.99
+        return Math.floor(valor)// o floor vai arrendondar o valor
+    }
+    console.log(getInteiroAleatorio(-1, 15))
+
+    // pequeno exer
+
+    //while
+    let opcao = 1
+
+    //essa função vai continuar repetindo até que o valor for igual a -1,até lá vai continuar rodando varios valores
+    while(opcao != -1){
+        opcao =getInteiroAleatorio(-1, 25)//de menos um até 25
+        console.log(`Opção escolhida: ${opcao}`)
+    }
+    console.log('Até a proxíma')
+
+    //FOR - para
+
+    //nessa função For se ter o controle do que irá acontecer,tendo um limite de quantas vezes será utilizada.Sendo muito usada em vetores e matrizes 
+    for(let i = 1;i<= 10;i++){
+        console.log(`i: ${i}`)
+    }
+
+    const notas = [6.8,3.1,2.4,9.5,7.1]
+    console.log(notas.length)//lenght-levantamento da quantidade de indices/elemento
+
+    //for
+    for(let i = 0; i< notas.length ;i++){// tem que ser a partir do indice 0!,pois os arrays começam a partir do indice 0
+        if(notas[i] > 5){//vai imprimir as notas maiores que 5 que tem dentro do array
+        console.log(`notas: ${notas[i]}`)//[]- vai colocar como num array,uma
+    }
+    }
+</script> 
+</body>
+</html>

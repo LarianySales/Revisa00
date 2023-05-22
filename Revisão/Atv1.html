@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+     main{
+        /* com flexbox */
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        border: 1px solid #000;
+        /* height: 100vh; */
+
+        /* com grid */
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-content: center;
+        height: 100vh;
+     }
+     section{
+        display: flex;
+        justify-content: end;
+     }
+    </style>
+</head>
+<body>
+   
+    <main>
+      <section><img src="./img/bingo.png" width="600px" height="400px" alt=""></section>
+       
+      <article>
+        <h1>Programa Tabuada</h1>
+        <label for="input">Número:</label><input  id="number" type="number">
+        <button id="mostrar" type="submit">Mostrar Tabuada</button>
+        <hr>
+        <p class="resposta"></p>
+      </article>
+    </main>
+
+    <script>
+        // let number = document.getElementById('number').value
+        // const btn = document.getElementById('Mostrar')
+
+        // btn.addEventListener('click',()=>{
+        //    for(let i = 0; i <= 10; i++) {
+        //      let result = number * i
+        //      console.log(result[i]) 
+        //    }
+
+        // })
+
+        //correção
+        //referência dos elementos
+        let input =document.querySelector('#number')
+        let btn = document.querySelector('#mostrar')
+        let tabuada = document.querySelector('.resposta')
+
+        btn.addEventListener('click',()=>{
+            let numero = input.value
+            // console.log(typeof numero)//po typeof idetifica o tipo de elemento
+
+            if(input.value == 0 || isNaN(input.value)){
+                alert('Digite um número válido')
+                input.focus()
+                return
+            }
+let resposta = ''
+
+            for(let i = 1; i<=10; i++){
+                resposta = `${resposta+numero} x ${i} = ${numero*i} <br>`
+                
+            }
+            tabuada.innerHTML =`${resposta}`
+        })
+
+
+    </script>
+</body>
+</html>

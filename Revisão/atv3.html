@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+        }
+  
+        main {
+           /* com flexbox */
+           display: flex;
+          
+           justify-content: center;
+           align-items: center;
+           /* border: 1px solid #000; */
+           height: 100vh;
+           gap: 10px;
+           font-size:20px ;
+  
+           /* com grid */
+           /*    
+             display: grid;
+             grid-template-columns: 1fr 1fr 1fr;
+             align-content: center;
+             height: 100vh; */
+        }
+  article{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+        section {
+           display: flex;
+           justify-content: end;
+        }
+        button{
+            margin-top: 9px;
+            height: 30px;
+        }
+     </style>
+</head>
+<body>
+     
+    <main>
+        <section><img src="./img/bingo.png" width="600px" height="400px" alt=""></section>
+         
+        <article>
+          <h1>Contas do mês</h1>
+          <label for="input">Descrição:</label><input  id="compra" type="text">
+          <label for="input">Valor da compra:</label><input  id="preco" type="number">
+          <button id="registrar" type="submit">Registrar Contas</button>
+          <hr>
+          <p class="resposta"></p>
+        </article>
+      </main>
+
+<script>
+let compras = []
+
+
+    let produto = document.getElementById('compra')
+    let valor = document.getElementById('preco')
+    let btn =document.getElementById('resgistrar')
+
+    btn.addEventListener('click',()=>{
+        if(produto == null || produto == ''){
+            alert("Digite a descrição do produto!")
+        }
+        if(valor == 0 || valor == isNaN){
+            alert("Digite o valor do produto!")
+        }
+    for(let i = 0; i <= 4;i++){
+       produto.push = compras
+    }
+
+    })
+
+    
+
+
+
+</script>
+
+</body>
+</html>

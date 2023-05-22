@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      main {
+         /* com flexbox */
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         /* border: 1px solid #000; */
+         height: 100vh;
+         gap: 10px;
+
+         /* com grid */
+         /*    
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           align-content: center;
+           height: 100vh; */
+      }
+
+      section {
+         display: flex;
+         justify-content: end;
+      }
+   
+   </style>
+</head>
+
+<body>
+
+   <main>
+      <section><img src="./img/bingo.png" width="600px" height="400px" alt=""></section>
+
+      <article>
+         <h1>Programa Números Decrescente</h1>
+         <label for="input">Número:</label><input id="number1" type="number">
+         <button id="mostrar" type="submit">Desce até 1</button>
+         <hr>
+         <p class="resposta"></p>
+      </article>
+   </main>
+
+   <script>
+      let btn = document.querySelector('#mostrar')
+      let resultado = document.querySelector('.resposta')
+
+      btn.addEventListener('click', () => {
+
+      var number = document.querySelector('#number1')
+
+
+         if (number.value == 0 || isNaN(number.value)) {
+            alert('Digite um número válido')
+            input.focus()
+            return
+         }
+
+         let resposta = ''
+         for (let i = number.value; i >= 1; i--) {
+            resposta = i
+            // console.log(resposta); 
+         resultado.textContent = `Entre ${number.value} e 1 : ${resposta.value}`
+
+         }
+
+         
+      })
+   </script>
+</body>
+
+</html>
