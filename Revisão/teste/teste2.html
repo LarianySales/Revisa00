@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro de Produtos</title>
+</head>
+<body>
+  <label for="nome">Nome do Produto:</label>
+  <input type="text" id="nome">
+  <br>
+  <label for="preco">Preço do Produto:</label>
+  <input type="number" id="preco">
+  <br>
+  <button onclick="registrarProduto()">Registrar Produto</button>
+  <br>
+  <h2>Informações dos Produtos:</h2>
+  <ul id="listaProdutos"></ul>
+  <p>Quantidade de Produtos: <span id="quantidadeProdutos">0</span></p>
+  <p>Soma dos Preços: R$ <span id="somaPrecos">0</span></p>
+
+  <script>
+    let produtos = [];
+    let quantidadeProdutos = 0;
+    let somaPrecos = 0;
+
+    function registrarProduto() {
+      let nomeProduto = document.getElementById("nome").value;
+      let precoProduto = parseFloat(document.getElementById("preco").value);
+
+      if (nomeProduto === "" || isNaN(precoProduto)) {
+        alert("Preencha o nome e o preço do produto corretamente.");
+        return;
+      }
+
+      produtos.push({ nome: nomeProduto, preco: precoProduto });
+      quantidadeProdutos++;
+      somaPrecos += precoProduto;
+
+      atualizarInformacoes();
+      limparCampos();
+    }
+
+    function atualizarInformacoes() {
+      let listaProdutos = document.getElementById("listaProdutos");
+      listaProdutos.innerHTML = "";
+
+      for (let i = 0; i < produtos.length; i++) {
+        let produto = produtos[i];
+        let itemLista = document.createElement("li");
+        itemLista.innerText = `Nome: ${produto.nome} - Preço: R$ ${produto.preco.toFixed(2)}`;
+        listaProdutos.appendChild(itemLista);
+      }
+
+      document.getElementById("quantidadeProdutos").innerText = quantidadeProdutos;
+      document.getElementById("somaPrecos").innerText = somaPrecos.toFixed(2);
+    }
+
+    function limparCampos() {
+      document.getElementById("nome").value = "";
+      document.getElementById("preco").value = "";
+    }
+  </script>
+</body>
+</html>
